@@ -22,7 +22,11 @@ class DuckyPage(BasePage):
     def add_ducks(self):
         purple_duck = self.chrome.find_element(*MainPageLoc.purple_duck_loc)
         purple_duck.click()
-        time.sleep(2)
+        time.sleep(3)
+
+    def click_edit_account(self):
+        edit_account = self.chrome.find_element(*MainPageLoc.edit_account_loc)
+        edit_account.click()
 
 
 

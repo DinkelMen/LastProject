@@ -7,6 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from regional_settings_page import RegionalSettingsPage
 from selected_duck_page import SelectedDuckPage
 from cart_page import CartPage
+from edit_account_page import EditAccountPage
 from api import API
 
 
@@ -66,6 +67,42 @@ def test_api1():
     api.verify_api()
 
 
+def test_case_3(open_chrome):
+    # open page
+    link = "http://localhost/litecart/en/"
+    ducky_page = DuckyPage(open_chrome, link)
+    ducky_page.open()
+    time.sleep(3)
+    # login
+    ducky_page.login()
+    time.sleep(3)
+    # редактируем имя пользователя
+    ducky_page.click_edit_account()
+    time.sleep(2)
+    edit_account_page = EditAccountPage(open_chrome, link)
+    edit_account_page.edit_user_name()
+    edit_account_page.click_save_button()
+    # проверяем в БД что имя изменено
+    sql = SQL()
+    sql.verify_name_change()
+
+
+def test_case_4(open_chrome):
+    # open app
+    link = "http://localhost/litecart/en/"
+    ducky_page = DuckyPage(open_chrome, link)
+    ducky_page.open()
+    time.sleep(2)
+    ducky_page.add_ducks()
+    selected_duck_page = SelectedDuckPage(open_chrome, link)
+    selected_duck_page.add_to_cart_2()
+    time.sleep(2)
+    selected_duck_page.go_to_cart()
+    time.sleep(2)
+    cart_page = CartPage(open_chrome, link)
+    cart_page.change_amount()
+    cart_page.click_update_button()
+    cart_page.check_sum_2()
 
 
 
