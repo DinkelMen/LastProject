@@ -64,7 +64,7 @@ def test_case_2(open_chrome):
 
 def test_api1():
     api = API()
-    api.verify_api()
+    api.verify_api_1()
 
 
 def test_case_3(open_chrome):
@@ -103,6 +103,12 @@ def test_case_4(open_chrome):
     cart_page.change_amount()
     cart_page.click_update_button()
     cart_page.check_sum_2()
+    cart_page.remove_ducks()
+    cart_page.verify_cart_emptiness()
+
+    def test_api2():
+        api = API()
+        api.verify_api_2()
 
 
 

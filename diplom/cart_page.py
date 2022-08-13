@@ -42,9 +42,18 @@ class CartPage(BasePage):
         time.sleep(2)
         turtle_amount = self.chrome.find_element(*MainPageLoc.turtle_amount_loc).text
         time.sleep(1)
-        print('dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd', turtle_amount, act_sum, total_price)
+        # print('dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd', turtle_amount, act_sum, total_price)
         assert act_sum == total_price
         assert int(turtle_amount) == 3
+
+    def remove_ducks(self):
+        remove_button = self.chrome.find_element(*MainPageLoc.remove_button_lock)
+        remove_button.click()
+        time.sleep(2)
+
+    def verify_cart_emptiness(self):
+        page_message = self.chrome.find_element(*MainPageLoc.page_message_loc).text
+        assert page_message == 'There are no items in your cart.'
 
 
 

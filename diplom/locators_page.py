@@ -38,6 +38,8 @@ class MainPageLoc:
     actual_sum_2_loc = (By.CSS_SELECTOR, ".dataTable>:nth-child(1)>:nth-child(6)>:nth-child(2)>:nth-child(1)")
     total_price_loc = (By.CSS_SELECTOR, ".dataTable>:nth-child(1)>:nth-child(2)>:nth-child(6)")
     turtle_amount_loc = (By.CSS_SELECTOR, ".dataTable>:nth-child(1)>:nth-child(2)>:nth-child(1)")
+    remove_button_lock = (By.CSS_SELECTOR, "[name='remove_cart_item']")
+    page_message_loc = (By.CSS_SELECTOR, "#content>:nth-child(1)>:nth-child(1)>:nth-child(1)")
 
 
 
