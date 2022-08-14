@@ -14,7 +14,7 @@ class SQL:
         time.sleep(2)
         cursor.execute(query)
         order_status_id = cursor.fetchall()[0][0]
-        assert order_status_id == 0
+        assert order_status_id == 0, f"order_status_id should be equal 0, got {order_status_id} instead"
 
     def verify_name_change(self):
         db = mysql.connect(host="localhost",
@@ -27,6 +27,4 @@ class SQL:
         time.sleep(2)
         cursor.execute(query)
         changed_name = cursor.fetchall()[0][0]
-        assert changed_name == 'Full'
-
-
+        assert changed_name == 'Full', f"changed_name should be equal 'Full', got {changed_name} instead"

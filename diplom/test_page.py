@@ -64,7 +64,9 @@ def test_case_2(open_chrome):
 
 def test_api1():
     api = API()
-    api.verify_api_1()
+    api.add_new_pet()
+    api.check_new_pet()
+    api.delete_new_pet()
 
 
 def test_case_3(open_chrome):
@@ -108,12 +110,7 @@ def test_case_4(open_chrome):
 
     def test_api2():
         api = API()
-        api.verify_api_2()
-
-
-
-'''bd@mail.ru
-+375223454343
-12345'''
-
-
+        api.create_user()
+        api.get_user_data()
+        api.change_user_name()
+        api.check_user_name()
