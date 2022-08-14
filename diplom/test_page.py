@@ -1,13 +1,13 @@
 import time
 import pytest
-from ducky_page import DuckyPage
+from Pages.ducky_page import DuckyPage
 from sql import SQL
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from regional_settings_page import RegionalSettingsPage
-from selected_duck_page import SelectedDuckPage
-from cart_page import CartPage
-from edit_account_page import EditAccountPage
+from Pages.regional_settings_page import RegionalSettingsPage
+from Pages.selected_duck_page import SelectedDuckPage
+from Pages.cart_page import CartPage
+from Pages.edit_account_page import EditAccountPage
 from api import API
 
 
