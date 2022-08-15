@@ -1,5 +1,8 @@
 import time
 import pytest
+import sys
+sys.path.append('../')
+print(sys.path)
 from Pages.ducky_page import DuckyPage
 from sql import SQL
 from selenium import webdriver
