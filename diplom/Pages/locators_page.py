@@ -20,6 +20,7 @@ class LocatorsPage:
 
     # cart_page locators
     actual_sum_loc = (By.CSS_SELECTOR, ".dataTable>:nth-child(1)>:nth-child(8)>:nth-child(2)>:nth-child(1)")
+    actual_sum_loc2 = (By.CSS_SELECTOR, ".dataTable>:nth-child(1)>:nth-child(7)>:nth-child(2)>:nth-child(1)")
     order_button_loc = (By.CSS_SELECTOR, "[name='confirm_order']")
     amount_window_loc = (By.CSS_SELECTOR, "[name='quantity']")
     update_button_loc = (By.CSS_SELECTOR, "[name='update_cart_item']")

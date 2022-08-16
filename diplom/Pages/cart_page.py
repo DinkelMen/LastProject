@@ -1,19 +1,24 @@
 import time
-from base_page import BasePage
-from locators_page import *
+from diplom.Pages.base_page import BasePage
+from diplom.Pages.locators_page import *
 
 
 class CartPage(BasePage):
     def check_sum(self):
         summa = 0
         amount = 0
-        for n in [2, 3, 4]:
+        cycle_variable = self.diff_ducks_amount()
+        for n in range(2, cycle_variable):
             item = self.chrome.find_element(By.CSS_SELECTOR, f".dataTable>:nth-child(1)>:nth-child({n})>:nth-child(6)").text
             item = item[1:-2]
             summa += float(item)
             amount += 1
-        act_sum = self.chrome.find_element(*LocatorsPage.actual_sum_loc).text
-        act_sum = float(act_sum[1:-1])
+        if cycle_variable == 5:
+            act_sum = self.chrome.find_element(*LocatorsPage.actual_sum_loc).text
+            act_sum = float(act_sum[1:-1])
+        else:
+            act_sum = self.chrome.find_element(*LocatorsPage.actual_sum_loc2).text
+            act_sum = float(act_sum[1:-1])
         assert summa == act_sum, f"summa should be equal 3, got {summa} instead"
         assert amount == 3, f"amount should be equal 3, got {amount} instead"
 

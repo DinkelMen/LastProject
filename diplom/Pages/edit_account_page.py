@@ -1,6 +1,6 @@
 import time
-from base_page import BasePage
-from locators_page import *
+from diplom.Pages.base_page import BasePage
+from diplom.Pages.locators_page import *
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 
@@ -15,4 +15,3 @@ class EditAccountPage(BasePage):
     def click_save_button(self):
         save_button = self.chrome.find_element(*LocatorsPage.save_button_loc)
         save_button.click()
-

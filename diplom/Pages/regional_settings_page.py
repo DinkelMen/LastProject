@@ -1,5 +1,5 @@
-from base_page import BasePage
-from locators_page import *
+from diplom.Pages.base_page import BasePage
+from diplom.Pages.locators_page import *
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
