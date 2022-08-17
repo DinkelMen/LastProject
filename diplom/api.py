@@ -22,12 +22,6 @@ class API:
         delete_new_pet_json = delete_new_pet.json()
         assert delete_new_pet.status_code == 200, f"status_code should be equal 200, got {delete_new_pet.status_code} instead. Received json: {delete_new_pet_json}"
 
-        # print(add_new_pet_json, check_new_pet_json, delete_new_pet_json)
-        # assert add_new_pet.status_code == 200, f"status_code should be equal 200, got {add_new_pet.status_code} instead. Received json: {add_new_pet_json}"
-        # assert check_new_pet.status_code == 200, f"status_code should be equal 200, got {check_new_pet.status_code} instead. Received json: {check_new_pet_json}"
-        # assert delete_new_pet.status_code == 200, f"status_code should be equal 200, got {delete_new_pet.status_code} instead. Received json: {delete_new_pet_json}"
-        # assert check_new_pet_json['status'] == 'ready', f"check_new_pet_json['status'] should be equal 'ready', got {check_new_pet_json['status']} instead."
-
     def create_user(self):
         user = {
             "id": 2,
@@ -70,9 +64,3 @@ class API:
         assert check_user_name.status_code == 200, f"check_user_name status_code should be equal 200, got {check_user_name.status_code} instead. Received json {check_user_name_json}"
         assert self.get_user_data_json['username'] != check_user_name_json['username'], f"{self.get_user_data_json['username']} should not be equal {check_user_name_json['username']}."
 
-        # print(create_user_json, get_user_data_json, change_user_name_json, check_user_name_json, get_user_data_json['username'], check_user_name_json['username'])
-        # assert create_user.status_code == 200, f"create_user status_code should be equal 200, got {create_user.status_code} instead. Received json: {create_user_json}"
-        # assert get_user_data.status_code == 200, f"get_user_data status_code should be equal 200, got {get_user_data.status_code} instead. Received json: {get_user_data_json}"
-        # assert change_user_name.status_code == 200, f"change_user_name status_code should be equal 200, got {change_user_name.status_code} instead. Received json {change_user_name_json}"
-        # assert check_user_name.status_code == 200, f"check_user_name status_code should be equal 200, got {check_user_name.status_code} instead. Received json {check_user_name_json}"
-        # assert get_user_data_json['username'] != check_user_name_json['username'], f"{get_user_data_json['username']} should not be equal {check_user_name_json['username']}."
