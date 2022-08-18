@@ -12,7 +12,10 @@ class CartPage(BasePage):
             item = self.chrome.find_element(By.CSS_SELECTOR, f".dataTable>:nth-child(1)>:nth-child({n})>:nth-child(6)").text
             item = item[1:-2]
             summa += float(item)
-            amount += 1
+            if cycle_variable == 5:
+                amount += 1
+            else:
+                amount += 1.5
         if cycle_variable == 5:
             act_sum = self.chrome.find_element(*LocatorsPage.actual_sum_loc).text
             act_sum = float(act_sum[1:-1])
