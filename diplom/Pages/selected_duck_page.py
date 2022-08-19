@@ -1,9 +1,16 @@
 from diplom.Pages.base_page import BasePage
 from diplom.Pages.locators_page import *
 import time
+from selenium.webdriver.support.ui import Select
 
 
 class SelectedDuckPage(BasePage):
+    def yellow_check(self):
+        duck_name = self.chrome.find_element(*LocatorsPage.duck_name_loc).text
+        if duck_name == "Yellow Duck":
+            select = Select(self.chrome.find_element(*LocatorsPage.duck_size_loc))
+            select.select_by_value('Small')
+        time.sleep(1)
 
     def add_to_cart(self):
         self.yellow_check()

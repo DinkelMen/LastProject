@@ -4,6 +4,17 @@ from diplom.Pages.locators_page import *
 
 
 class CartPage(BasePage):
+    def diff_ducks_amount(self):
+        amount_list = []
+        for n in [2, 3]:
+            duck_amount = self.chrome.find_element(By.CSS_SELECTOR, f".dataTable>:nth-child(1)>:nth-child({n})>:nth-child(1)").text
+            amount_list.append(duck_amount)
+        if '2' in amount_list:
+            cycle_variable = 4
+        else:
+            cycle_variable = 5
+        return cycle_variable
+
     def check_sum(self):
         summa = 0
         amount = 0

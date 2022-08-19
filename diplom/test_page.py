@@ -21,7 +21,7 @@ def open_chrome():
 
 
 @allure.story('Changing the currency and country of the site')
-def test_case_1(open_chrome):
+def test_change_currency_country(open_chrome):
     with allure.step("Open the application and go to the Regional settings page by clicking"):
         link = "http://localhost/litecart/en/"
         ducky_page = DuckyPage(open_chrome, link)
@@ -39,7 +39,7 @@ def test_case_1(open_chrome):
 
 
 @allure.story("Order creation and its verification in the database")
-def test_case_2(open_chrome):
+def test_order_creation_verification(open_chrome):
     with allure.step("Open the application"):
         link = "http://localhost/litecart/en/"
         ducky_page = DuckyPage(open_chrome, link)
@@ -66,7 +66,7 @@ def test_case_2(open_chrome):
 
 
 @allure.story("API Check of addition and removal pet")
-def test_api1():
+def test_add_and_remove_pet():
     api = API()
     with allure.step("Add of new pet"):
         api.add_new_pet()
@@ -77,7 +77,7 @@ def test_api1():
 
 
 @allure.story("Change user name")
-def test_case_3(open_chrome):
+def test_change_user_name(open_chrome):
     with allure.step("Open the application"):
         link = "http://localhost/litecart/en/"
         ducky_page = DuckyPage(open_chrome, link)
@@ -98,7 +98,7 @@ def test_case_3(open_chrome):
 
 
 @allure.story("Order creation in another way, its verification and removal")
-def test_case_4(open_chrome):
+def test_order_another_create(open_chrome):
     with allure.step("Open the application"):
         link = "http://localhost/litecart/en/"
         ducky_page = DuckyPage(open_chrome, link)
@@ -125,7 +125,7 @@ def test_case_4(open_chrome):
 
 
 @allure.story("API User creation and management")
-def test_api2():
+def test_api2_user_create_manage():
     api = API()
     with allure.step("Create user"):
         api.create_user()
